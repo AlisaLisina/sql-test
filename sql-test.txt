@@ -155,3 +155,25 @@ SELECT SUM(CITY.POPULATION)
 FROM CITY
 JOIN COUNTRY ON CITY.CountryCode = COUNTRY.Code
 WHERE CONTINENT = 'Asia';
+
+17.08
+-- Given the CITY and COUNTRY tables, query the names of all cities where the CONTINENT is 'Africa'.
+SELECT CITY.NAME
+FROM CITY 
+JOIN COUNTRY ON CITY.CountryCode = COUNTRY.Code 
+WHERE CONTINENT = 'Africa';
+
+-- Write a query to print the pattern P(20).
+*****
+****
+***
+**
+*
+DECLARE @i INT = 20
+WHILE (@i > 0) 
+BEGIN
+   PRINT REPLICATE('* ', @i) 
+   SET @i = @i - 1
+END;
+
+
