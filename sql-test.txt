@@ -176,4 +176,17 @@ BEGIN
    SET @i = @i - 1
 END;
 
+18.08
+-- Write a query to find the maximum total earnings for all employees as well as the total number of employees who have maximum total earnings. 
+SELECT SALARY*MONTHS, COUNT(EMPLOYEE_ID)
+FROM EMPLOYEE
+WHERE SALARY*MONTHS = (SELECT MAX(SALARY*MONTHS) FROM EMPLOYEE)
+GROUP BY SALARY*MONTHS;
+-- OR
+SELECT TOP 1 SALARY*MONTHS SUS, COUNT(EMPLOYEE_ID)
+FROM EMPLOYEE
+GROUP BY SALARY*MONTHS
+ORDER BY SUS DESC;
+--
+-- 
 
